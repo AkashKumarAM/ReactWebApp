@@ -48,8 +48,8 @@ class Directoy extends React.Component {
         return (
             <div className='directory-menu'>
                 {
-                    this.state.sections.map(section => (
-                        <MenuItem  key= {section.id} title={section.title} imageurl= {section.imageUrl}  size={section.size}/>
+                    this.state.sections.map(({id, ...otherProps}) => (
+                        <MenuItem  key={id} {...otherProps}/>
                     ))
                 }
             </div>
